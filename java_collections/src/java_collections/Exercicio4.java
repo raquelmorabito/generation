@@ -1,56 +1,46 @@
-// Define o pacote onde essa classe está organizada
+// Define o pacote onde esta classe está organizada.
 package java_collections;
 
-// Importa as classes HashSet e Set da biblioteca padrão do Java para criação de um conjunto de elementos
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+// Importa as classes HashSet e Scanner da biblioteca padrão do Java.
+import java.util.HashSet; // HashSet para armazenar números inteiros de forma única.
+import java.util.Scanner; // Scanner para ler entradas do usuário.
 
-// Declara uma classe chamada "Exercicio4"
+// Declara uma classe chamada "Exercicio4".
 public class Exercicio4 {
     
-    // O método "main" é o ponto de entrada do programa, onde o código começa a ser executado
+    // O método "main" é o ponto de entrada do programa, onde o código começa a ser executado.
     public static void main(String[] args) {
-        
-        // Cria um conjunto (Set) de inteiros chamado "numeros" usando a implementação HashSet
-        Set<Integer> numeros = new HashSet<>();
-        
-        // Estrutura de repetição "for" para adicionar os números de 0 a 9 ao conjunto "numeros"
-        for (int i = 0; i < 10; i++) {
-            numeros.add(i);
-        }
-
-        // Exibe uma mensagem no console e os números presentes no conjunto "numeros"
-        System.out.println("\n-----------------------------------------------------------------");
-        System.out.print("Números presentes:");
-        
-     // Usamos um "for-each" para mostrar cada número que está no conjunto "numeros"        for (Integer numero : numeros) {
-        for (Integer numero : numeros) {
-        System.out.print(numero + " ");
-            }
-
-        // Cria um novo objeto "Scanner" para ler a entrada do usuário
+        // Cria um novo HashSet para armazenar números inteiros.
+        HashSet<Integer> meuSet = new HashSet<>();
+        // Cria um novo objeto Scanner para ler entradas do usuário.
         Scanner scanner = new Scanner(System.in);
-        
-        // Exibe uma linha de separação e solicita ao usuário que digite um número para pesquisa
-        System.out.print("\n-----------------------------------------------------------------");
-        System.out.print("\nDigite o número que você deseja com base nos números presentes: ");
-        
-        // Lê o número digitado pelo usuário e armazena na variável "numeroProcurado"
-        int numeroProcurado = scanner.nextInt();
 
-        // Verifica se o número digitado está presente no conjunto "numeros"
-        if (numeros.contains(numeroProcurado)) {
-            System.out.println("-----------------------------------------------------------------");
-            // Exibe mensagem de sucesso caso o número seja encontrado
-            System.out.println("Parabéns! O número " + numeroProcurado + " foi encontrado!");
+        // Adiciona números inteiros ao HashSet. Números duplicados não serão adicionados.
+        meuSet.add(2);
+        meuSet.add(5);
+        meuSet.add(1);
+        meuSet.add(3);
+        meuSet.add(4);
+        meuSet.add(9);
+        meuSet.add(7);
+        meuSet.add(8);
+        meuSet.add(10);
+        meuSet.add(6);
+
+        // Solicita ao usuário para digitar um número entre 1 e 10.
+        System.out.println("Digite o número que você deseja encontrar de 1 a 10: ");
+        int numeroBuscado = scanner.nextInt(); // Lê o número digitado pelo usuário.
+
+        // Verifica se o HashSet contém o número buscado.
+        if (meuSet.contains(numeroBuscado)) {
+            // Se o número estiver presente, informa ao usuário.
+            System.out.println("O número " + numeroBuscado + " foi encontrado!");
         } else {
-            System.out.println("\n-----------------------------------------------------------------");
-            // Exibe mensagem de erro caso o número não seja encontrado
-            System.out.println("Tente novamente! O número " + numeroProcurado + " não foi encontrado!");
+            // Se o número não estiver presente, informa ao usuário.
+            System.out.println("O número " + numeroBuscado + " não foi encontrado!");
         }
 
-        // Fecha o scanner para liberar os recursos que ele estava usando
+        // Fecha o scanner para liberar os recursos que ele estava usando (opcional, mas uma boa prática).
         scanner.close();
     }
 }

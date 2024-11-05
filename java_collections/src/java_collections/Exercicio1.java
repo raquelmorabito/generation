@@ -1,62 +1,58 @@
-// Define o pacote onde essa classe está organizada
+// Define o pacote onde esta classe está organizada.
 package java_collections;
 
-// Importa a classe ArrayList da biblioteca padrão do Java para criar uma lista de elementos
-import java.util.ArrayList;
-// Importa a classe Collections, que fornece métodos para manipulação de coleções, como ordenação
-import java.util.Collections;
-// Importa a classe Scanner da biblioteca padrão do Java para ler entradas do usuário
-import java.util.Scanner;
+// Importa as classes ArrayList, Collections e Scanner da biblioteca padrão do Java.
+import java.util.ArrayList; // ArrayList para criar uma lista dinâmica de cores.
+import java.util.Collections; // Collections para usar métodos utilitários de coleção.
+import java.util.Scanner; // Scanner para ler entradas do usuário.
 
-// Declara uma classe chamada "Exercicio1"
+// Declara uma classe chamada "Exercicio1".
 public class Exercicio1 {
 
-    // O método "main" é o ponto de entrada do programa, onde o código começa a ser executado
+    // O método "main" é o ponto de entrada do programa, onde o código começa a ser executado.
     public static void main(String[] args) {
         
-        // Cria um novo objeto "Scanner" para ler as entradas que o usuário digitar no console
+        // Cria um novo objeto Scanner para ler entradas do usuário.
         Scanner scanner = new Scanner(System.in);
         
-        // Cria um ArrayList de Strings chamado "cores" para armazenar as cores que o usuário digitar
+        // Cria uma nova lista (ArrayList) de Strings para armazenar as cores.
         ArrayList<String> cores = new ArrayList<>();
 
-        // Exibe uma mensagem no console para separar a entrada das instruções do programa
+        // Solicita ao usuário que digite 5 cores.
         System.out.println("------------------");
         System.out.println("Digite 5 cores:");
         
-        // Estrutura de repetição "for" que permite ao usuário digitar 5 cores, que são adicionadas à lista "cores"
+     // O loop se repetirá 5 vezes, permitindo que o usuário insira 5 cores diferentes.
+     // A cada iteração, o programa lê a cor digitada e a armazena na lista 'cores'.
         for (int i = 0; i < 5; i++) {
-            // Lê a cor digitada pelo usuário e a adiciona à lista "cores"
-            String cor = scanner.nextLine();
-            cores.add(cor);
+            String cor = scanner.nextLine(); // Lê uma cor digitada pelo usuário.
+            cores.add(cor); // Adiciona a cor à lista de cores.
         }
 
-        // Exibe a lista de cores digitadas pelo usuário
+        // Exibe as cores que foram digitadas pelo usuário.
         System.out.println("------------------");
-        System.out.println("Você digitou essas cores::");
+        System.out.println("Você digitou essas cores:");
         System.out.println("------------------");
         
-        // Usamos um "for-each" para mostrar cada cor que está no conjunto "cores"    
+        // Um loop que percorre a lista de cores e as exibe.
         for (String cor : cores) {
-            System.out.println("- " + cor);
+            System.out.println("- " + cor); // Exibe cada cor com um hífen.
         }
         
-        // Ordena a lista de cores em ordem alfabética usando o método "sort" da classe Collections
+        // Ordena a lista de cores em ordem alfabética.
         Collections.sort(cores);
         
-        // Exibe a lista de cores ordenadas em ordem alfabética
+        // Exibe a lista de cores ordenadas.
         System.out.println("------------------");
         System.out.println("Cores em ordem alfabética:");
         System.out.println("------------------");
         
-        // Estrutura de repetição "for-each" para exibir cada cor na lista "cores" após a ordenação
+        // Um loop que percorre a lista ordenada de cores e as exibe.
         for (String cor : cores) {
-            System.out.println("- " + cor);
+            System.out.println("- " + cor); // Exibe cada cor ordenada com um hífen.
         }
 
-        // Fecha o scanner para liberar os recursos que ele estava usando
+        // Fecha o scanner para liberar os recursos que ele estava usando.
         scanner.close();
     }
 }
-	
-
