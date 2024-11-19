@@ -89,6 +89,7 @@ public class Exercício1 {
                 }
             // O loop continua enquanto a opção for diferente de 0.
             } while (opcao != 0);
+            scanner.close();
         } 
     } 
 }
